@@ -1,0 +1,100 @@
+name: Build fur2mid
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build (${{ matrix.label }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            label: Windows x64
+            artifact: fur2mid-windows-x64
+          - os: ubuntu-22.04
+            label: Linux x64
+            artifact: fur2mid-linux-x64
+          - os: macos-latest
+            label: macOS arm64
+            artifact: fur2mid-macos-arm64
+          - os: macos-15-intel
+            label: macOS Intel
+            artifact: fur2mid-macos-intel
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: runner.os != 'Linux'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Linux build prerequisites
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            python3 python3-venv python3-tk dpkg-dev
+
+      - name: Install Python dependencies (Linux system Python with Tk support)
+        if: runner.os == 'Linux'
+        run: |
+          python3 -m venv --system-site-packages .venv-build
+          .venv-build/bin/python -m pip install --upgrade pip
+          .venv-build/bin/python -m pip install -r requirements.txt pyinstaller
+
+      - name: Install Python dependencies (Windows/macOS)
+        if: runner.os != 'Linux'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt pyinstaller
+
+      - name: Validate source and run tests (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          .venv-build/bin/python -m py_compile main.py fur2mid.py packaging/build.py packaging/build_deb.py
+          .venv-build/bin/python -m unittest discover -s tests -v
+
+      - name: Validate source and run tests (Windows/macOS)
+        if: runner.os != 'Linux'
+        run: |
+          python -m py_compile main.py fur2mid.py packaging/build.py packaging/build_deb.py
+          python -m unittest discover -s tests -v
+
+      - name: Build portable Linux application
+        if: runner.os == 'Linux'
+        run: .venv-build/bin/python packaging/build.py --archive --clean
+
+      - name: Build portable Windows/macOS application
+        if: runner.os != 'Linux'
+        run: python packaging/build.py --archive --clean
+
+      - name: Build native Debian package
+        if: runner.os == 'Linux'
+        run: .venv-build/bin/python packaging/build.py --deb
+
+      - name: Upload platform build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            dist/fur2mid-*.zip
+            dist/fur2mid-*.tar.gz
+            dist/fur2mid_*.deb
+          if-no-files-found: error
+          retention-days: 30
