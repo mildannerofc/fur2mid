@@ -1,0 +1,191 @@
+{
+  "tool": "fur2mid",
+  "fur_version": 232,
+  "song": "",
+  "author": "",
+  "system": "Sega Genesis/Mega Drive",
+  "midi_file": "options music.mid",
+  "rows_rendered": 128,
+  "loop_repeats": 2,
+  "master_volume_percent": 100,
+  "instruments": [
+    {
+      "index": 0,
+      "name": "01 Breakfast_1",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 1,
+      "name": "02 Brunch_9",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 2,
+      "name": "02 Brunch_10",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 3,
+      "name": "02 Brunch_11",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 4,
+      "name": "06 Day Past_6",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 5,
+      "name": "08 Wrong Order_12",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 6,
+      "name": "12 Monkey Caught Last Time_0",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 7,
+      "name": "12 Monkey Caught Last Time_2",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 8,
+      "name": "12 Monkey Caught Last Time_3",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 9,
+      "name": "12 Monkey Caught Last Time_4",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 10,
+      "name": "12 Monkey Caught Last Time_5",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 11,
+      "name": "13 Ending, Credits_7",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 12,
+      "name": "13 Ending, Credits_8",
+      "type": 1,
+      "gm_program": 81
+    },
+    {
+      "index": 13,
+      "name": "Instrumento 13",
+      "type": 0,
+      "gm_program": 81
+    }
+  ],
+  "channels": [
+    {
+      "midi_track": 2,
+      "name": "FM1",
+      "system": "YM2612",
+      "midi_channel": 1,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 3,
+      "name": "FM2",
+      "system": "YM2612",
+      "midi_channel": 2,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 4,
+      "name": "FM3",
+      "system": "YM2612",
+      "midi_channel": 3,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 5,
+      "name": "FM4",
+      "system": "YM2612",
+      "midi_channel": 4,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 6,
+      "name": "FM5",
+      "system": "YM2612",
+      "midi_channel": 5,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 7,
+      "name": "FM6/DAC",
+      "system": "YM2612",
+      "midi_channel": 6,
+      "initial_gm_program": 81,
+      "chip_volume": 1.0,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 8,
+      "name": "PSG1",
+      "system": "SN76489",
+      "midi_channel": 7,
+      "initial_gm_program": 81,
+      "chip_volume": 0.5,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 9,
+      "name": "PSG2",
+      "system": "SN76489",
+      "midi_channel": 8,
+      "initial_gm_program": 81,
+      "chip_volume": 0.5,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 10,
+      "name": "PSG3",
+      "system": "SN76489",
+      "midi_channel": 9,
+      "initial_gm_program": 81,
+      "chip_volume": 0.5,
+      "chip_pan": 0.0
+    },
+    {
+      "midi_track": 11,
+      "name": "Noise",
+      "system": "SN76489",
+      "midi_channel": 11,
+      "initial_gm_program": 119,
+      "chip_volume": 0.5,
+      "chip_pan": 0.0
+    }
+  ],
+  "effects_seen": {},
+  "warnings": []
+}

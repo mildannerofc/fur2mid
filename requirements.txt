@@ -1,0 +1,3 @@
+mido>=1.3.0
+# Optional but recommended for Windows drag-and-drop support:
+tkinterdnd2>=0.4.2
