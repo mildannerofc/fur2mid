@@ -1,3 +1,5 @@
+<img width="652" height="575" alt="image" src="https://github.com/user-attachments/assets/a3c8d8cf-9f69-4bc2-8db0-a0f5b3bcc754" />
+
 # fur2mid
 
 **fur2mid** is a Python utility that converts Furnace Tracker `.fur` modules into editable Standard MIDI Files. It reads the Furnace module structure directly; it does not require an intermediate VGM export.
