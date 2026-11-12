@@ -1,5 +1,3 @@
-<img width="652" height="575" alt="image" src="https://github.com/user-attachments/assets/a3c8d8cf-9f69-4bc2-8db0-a0f5b3bcc754" />
-
 # fur2mid
 
 **fur2mid** is a Python utility that converts Furnace Tracker `.fur` modules into editable Standard MIDI Files. It reads the Furnace module structure directly; it does not require an intermediate VGM export.
@@ -168,3 +166,11 @@ The bundled `options music.fur` sample is Furnace format version **232**. It is 
 ## License
 
 This project is distributed under the MIT License. The Furnace format and effect documentation remain the work of the Furnace project and its contributors; see the reference links above for the upstream project and its license.
+
+## Cross-platform build workflow
+
+The repository now includes `.github/workflows/build.yml` for native Windows,
+Linux, and macOS builds. Build outputs are uploaded as GitHub Actions artifacts.
+Debian users can also build/install the native `fur2mid_<version>_all.deb`
+package. See [BUILDING.md](BUILDING.md) for local build commands, Debian
+dependencies, and artifact names.

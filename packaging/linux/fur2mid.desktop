@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=fur2mid
+GenericName=Furnace to MIDI Converter
+Comment=Convert Furnace Tracker modules into editable MIDI files
+Exec=fur2mid
+Icon=audio-midi
+Terminal=false
+Categories=AudioVideo;Audio;Utility;
