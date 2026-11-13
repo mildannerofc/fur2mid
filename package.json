@@ -1,0 +1,26 @@
+{
+  "name": "fur2mid",
+  "version": "0.1.1",
+  "description": "Furnace Tracker .fur to editable Standard MIDI converter (Python-based)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mildannerofc/fur2mid.git"
+  },
+  "homepage": "https://github.com/mildannerofc/fur2mid#readme",
+  "bugs": {
+    "url": "https://github.com/mildannerofc/fur2mid/issues"
+  },
+  "keywords": [
+    "furnace",
+    "tracker",
+    "chiptune",
+    "midi",
+    "converter",
+    "python"
+  ],
+  "scripts": {
+    "start": "python main.py",
+    "test": "python -m unittest discover -s tests -v"
+  }
+}
